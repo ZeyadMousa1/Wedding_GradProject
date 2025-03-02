@@ -1,0 +1,26 @@
+how to share data between 2 components:-
+
+1 - parent (data)  send to child
+
+selector child inside parent component
+
+Proparty in selector child 
+
+import
+
+
+
+Routing == Navigation
+Base URL / Path
+
+step 1 : Go to terminal
+        npm i react-router-dom
+
+step 2 : createBrowserRouter()
+     2.1 : import { createBrowserRouter } from 'react-router-dom'
+     2.2 : let routers = createBrowserRouter([])
+step 3 :
+step 4 :
+step 5 :
+step 6 :
+
