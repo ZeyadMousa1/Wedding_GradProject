@@ -1,4 +1,5 @@
 import "../../images/rings.png"
+import img1 from '../../images/rings.png'
 
 
 export default function Navbar() {
@@ -9,7 +10,7 @@ export default function Navbar() {
         <>
                 <nav className="navbar navbar-expand-lg bg-transparent mt-3">
         <div className="container">
-            <a className="navbar-brand" href="Index.html"><img src="....." alt="" width="30" height="30"
+            <a className="navbar-brand" href="Index.html"><img src={img1} alt="" width="30" height="30"
                     className="me-2" />Wedding Wizz</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

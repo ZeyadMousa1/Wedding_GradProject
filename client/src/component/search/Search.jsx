@@ -18,33 +18,29 @@ function Search() {
                     <label className="form-label">Choose your City</label>
                     <select className="form-select" id="validationCustom04" required>
                         <option selected disabled value="">Choose...</option>
-                        <option>...</option>
-                        <option>...</option>
-                        <option>...</option>
-                        <option>...</option>
-                        <option>...</option>
+                        <option>Cairo</option>
+                        <option>Alexandria</option>
+                        <option>Giza</option>
+                        <option>Port Said</option>
+                        <option>Al Mahallah al Kubra</option>
+                        <option>Al Mansurah</option>
+                        <option>Tanta</option>
                     </select>
                 </div>
                 <div className="col-md-3">
                     <label className="form-label">Choose your Date</label>
-                    <select className="form-select" id="validationCustom04" required>
-                        <option selected disabled value="">Choose...</option>
-                        <option>...</option>
-                        <option>...</option>
-                        <option>...</option>
-                        <option>...</option>
-                        <option>...</option>
-                    </select>
+                    <input type="Date" className="form-select" id="validationCustom04" required/>
                 </div>
                 <div className="col-md-3">
                     <label className="form-label">Choose your Budget</label>
                     <select className="form-select" id="validationCustom04" required>
                         <option selected disabled value="">Choose...</option>
-                        <option>...</option>
-                        <option>...</option>
-                        <option>...</option>
-                        <option>...</option>
-                        <option>...</option>
+                        <option>less Than 10K</option>
+                        <option>10K - 20K</option>
+                        <option>20K - 30K</option>
+                        <option>30K - 40K</option>
+                        <option>40K - 50K</option>
+                        <option>More than 50K</option>
                     </select>
                 </div>
                 <div className="col-12">
