@@ -10,13 +10,13 @@ import Footer from '../footer/Footer'
 function Allhome() {
   return (
     <div>
-     <Header/>
-     <Wedings/>
-     <Quality/>
-     <Service/>
-     <Logos/>
-     <Event/>
-     <Footer/>
+      <Header/>
+      <Wedings/>
+      <Quality/>
+      <Service/>
+      <Logos/>
+      <Event/>
+      <Footer/>
     </div>
   )
 }

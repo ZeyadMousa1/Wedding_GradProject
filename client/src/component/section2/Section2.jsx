@@ -6,7 +6,7 @@ function Section2() {
         <div className="Title mt-5 mb-3">
             <span>All The Halls</span>
         </div>
- 
+
 
         </>
     )
