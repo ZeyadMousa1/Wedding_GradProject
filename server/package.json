@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@prisma/client": "^6.4.1",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.8",
     "prisma": "^6.4.1"
