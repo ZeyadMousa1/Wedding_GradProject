@@ -12,3 +12,13 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Hall {
+  id Int @id @default(autoincrement())
+  name String
+  descripation String
+  image String
+  location String
+  price Int
+  capcity Int
+}

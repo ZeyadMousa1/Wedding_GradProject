@@ -1,9 +1,12 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "nodemon -x ts-node src/app.ts",
+    "watch": "ts -w"
   },
   "repository": {
     "type": "git",
@@ -33,6 +36,7 @@
   },
   "devDependencies": {
     "@prisma/client": "^6.4.1",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.8",
     "prisma": "^6.4.1"
