@@ -32,26 +32,15 @@ const Section1 = ({ name }) => {
               <img
                 src={hall.image}
                 alt={hall.name}
-                className="card-img-top"
+                className="card-img-top w-100 h-75"
                 style={{ height: "150px", objectFit: "cover" }}
               />
-              <div className="card-body">
+              <div className="card-body h-25 d-flex justify-content-center align-items-end text-light bg-body">
                 <h2 className="card-title" style={{ fontSize: "1.25rem" }}>
                   {hall.name}
                 </h2>{" "}
-                {/* Smaller title */}
-                <p className="card-text" style={{ fontSize: "0.9rem" }}>
-                  {hall.descripation}
-                </p>{" "}
-                {/* Smaller text */}
-                <p className="card-text" style={{ fontSize: "0.9rem" }}>
-                  <strong>Location:</strong> {hall.location}
-                </p>
                 <p className="card-text" style={{ fontSize: "0.9rem" }}>
                   <strong>Price:</strong> ${hall.price}
-                </p>
-                <p className="card-text" style={{ fontSize: "0.9rem" }}>
-                  <strong>Capacity:</strong> {hall.capcity} people
                 </p>
               </div>
             </div>
