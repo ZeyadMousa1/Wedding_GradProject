@@ -8,7 +8,7 @@ const Section1 = ({ name }) => {
   useEffect(() => {
     const fetchHalls = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/v1/halls");
+        const response = await axios.get("http://localhost:3000/api/v1/halls");
         setHalls(response.data.halls);
         console.log(response.data.halls);
       } catch (e) {
