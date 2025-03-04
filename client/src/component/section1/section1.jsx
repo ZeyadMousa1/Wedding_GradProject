@@ -21,22 +21,34 @@ const Section1 = ({ name }) => {
   }, []);
 
   return (
-    <div>
-      <h2>{name}</h2>
-      {halls.map((hall) => (
-        <div key={hall.id} className="d-flex mx-3 bg-lgiht text-black shadow rounded-2">
-          {/* Wrap hall details in a Link */}
-          <Link
-            to={`/halls/${hall.id}`}
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <img src={hall.image} alt={hall.name} style={{ width: "100%" }} />
-            <h2 className="text-center bg-light text-black" style={{ fontWeight: "600", fontSize: "20px",  }}>{hall.name}</h2>
-            <p className="text-center bg-light text-black" >Price: ${hall.price}</p>
-          </Link>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="mt-5 ms-3">
+        <h2>
+          {name} <i className="fa-solid fa-arrow-right"></i>{" "}
+        </h2>
+      </div>
+      <div
+        className="d-flex my-5 main"
+        style={{ width: "100%", height: "300px" }}
+      >
+        {halls.map((hall) => (
+          <div key={hall.id} className="d-flex mx-3 shadow rounded-2">
+            {/* Wrap hall details in a Link */}
+            <Link
+              to={`/halls/${hall.id}`}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <img
+                className="photo"
+                src={hall.image}
+                alt={hall.name}
+                style={{ width: "100%", height: "100%" }}
+              />
+            </Link>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

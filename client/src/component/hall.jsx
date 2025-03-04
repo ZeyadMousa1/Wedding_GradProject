@@ -27,25 +27,33 @@ const HallDetails = () => {
   }
 
   return (
-    <div className="container">
-      <div className="row ">
-        <div className="col-12 d-flex justify-content-center">
-          <h1 style={{ fontWeight: "600", fontSize: "34" }}>{hall.name}</h1>
+    <div className="container hall-details">
+      <div className="row">
+        {/* Hall Name */}
+        <div className="col-12 text-center">
+          <h1 className="hall-name">{hall.name}</h1>
         </div>
-        <div className="col-12 d-flex justify-content-center m-auto">
-          <img src={hall.image} alt={hall.name} style={{ width: "80%" }} />
+
+        {/* Hall Image */}
+        <div className="col-12 text-center my-4">
+          <img src={hall.image} alt={hall.name} className="hall-image" />
         </div>
-        <div className="col-12 d-flex justify-content-center">
-          <p>{hall.description}</p>
+
+        {/* Hall Description */}
+        <div className="col-12 text-center">
+          <p className="hall-description">{hall.descripation}</p>
         </div>
-        <div className="col-12 d-flex justify-content-center">
-          <p>{hall.description}</p>
+
+        {/* Hall Price and Capacity */}
+        <div className="col-6 text-center">
+          <p className="hall-price">
+            Price: <span>${hall.price}</span>
+          </p>
         </div>
-        <div className="col-6 d-flex justify-content-center">
-          <p>Price: ${hall.price}</p>
-        </div>
-        <div className="col-6 d-flex justify-content-center">
-          <p>Capacity: {hall.capacity} people</p>
+        <div className="col-6 text-center">
+          <p className="hall-capacity">
+            <span>{hall.capcity}</span> people
+          </p>
         </div>
       </div>
     </div>

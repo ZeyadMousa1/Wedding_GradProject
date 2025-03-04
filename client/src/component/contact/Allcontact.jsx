@@ -1,18 +1,12 @@
-import React from 'react'
-import Navbar from '../Navbar/Navbar'
-import Contactus from './Contactus'
-import Footer from '../footer/Footer'
+import React from "react";
+import Contactus from "./Contactus";
 
 function Allcontact() {
   return (
     <div>
-
-<Navbar/>
-<Contactus/>
-<Footer/>
-
+      <Contactus />
     </div>
-  )
+  );
 }
 
-export default Allcontact
+export default Allcontact;

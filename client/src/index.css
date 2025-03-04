@@ -67,14 +67,12 @@ button:focus-visible {
   }
 } */
 
-
 h1 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .navbar-brand {
   font-weight: 600;
-
 }
 
 .navbar li a {
@@ -85,7 +83,7 @@ h1 {
 }
 
 .navbar li a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -94,7 +92,6 @@ h1 {
   height: 3px;
   transition: all 0.6s;
 }
-
 
 .navbar li a:hover::after {
   width: 100%;
@@ -109,11 +106,6 @@ h1 {
   background-color: transparent;
   border: 3px solid #000;
 }
-
-
-
-
-
 
 .footer span {
   color: #ffffffa6;
@@ -136,7 +128,6 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .footer .end-foot {
@@ -168,4 +159,77 @@ footer .x-twitter:hover {
 
 footer .youtube:hover {
   color: red;
+}
+
+.main .photo img {
+  object-fit: cover;
+  transition: transform 0.8s;
+  height: 100%;
+}
+.main .photo {
+  overflow: hidden;
+}
+
+.main .photo:hover {
+  transform: scale(1.3);
+  transition: all 0.8s;
+}
+
+/* Container */
+.hall-details {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+/* Hall Name */
+.hall-name {
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Hall Image */
+.hall-image {
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hall Description */
+.hall-description {
+  font-size: 2rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* Hall Price and Capacity */
+.hall-price,
+.hall-capacity {
+  font-size: 2rem;
+  color: #444;
+  margin: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hall-name {
+    font-size: 2rem;
+  }
+
+  .hall-description {
+    font-size: 1rem;
+  }
+
+  .hall-price,
+  .hall-capacity span {
+    font-size: 1rem;
+    color: red;
+  }
 }
