@@ -1,36 +1,40 @@
 import { NextFunction, Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
-import { matchesGlob } from "path";
+import path, { matchesGlob } from "path";
+import { cloudinaryUploadImage } from "../../utils/cloudinary";
 
 const prisma = new PrismaClient();
 
-const anything = () => {};
-export const addHall = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-): Promise<void> => {
-  const { name, descripation, image, price, capcity, location } = req.body;
-  //   if (!name || !descripation || image || !price || !capcity || !location) {
-  //     res.status(404).json({ msg: "All faileds are require" });
-  //     return;
-  //   }
-  const hall = await prisma.hall.create({
-    data: {
-      name,
-      descripation,
-      image,
-      price,
-      capcity,
-      location,
-    },
-  });
+// export const addHall = async (
+//   req: Request,
+//   res: Response,
+//   next: NextFunction
+// ): Promise<void> => {
+//   const { name, descripation, price, capcity, location } = req.body;
+//   //   if (!name || !descripation || image || !price || !capcity || !location) {
+//   //     res.status(404).json({ msg: "All faileds are require" });
+//   //     return;
+//   //   }
+//   const imagePath = path.join(__dirname, `../../images/${req.file?.filename}`);
+//   const result = await cloudinaryUploadImage(imagePath);
 
-  res.status(201).json({
-    msg: "The hall is created successfully",
-    hall,
-  });
-};
+//   const hall = await prisma.hall.create({
+//     data: {
+//       name,
+//       descripation,
+//       image: (result as any).secure_url,
+//       imagePublicId: (result as any).public_id,
+//       price,
+//       capcity,
+//       location,
+//     },
+//   });
+
+//   res.status(201).json({
+//     msg: "The hall is created successfully",
+//     hall,
+//   });
+// };
 
 export const getAllHalls = async (
   req: Request,
@@ -39,6 +43,64 @@ export const getAllHalls = async (
 ) => {
   const halls = await prisma.hall.findMany({});
   res.status(201).json({ halls });
+};
+
+export const addHall = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const { name, descripation, price, capacity, location } = req.body;
+
+    // Validate required fields
+    // if (!name || !descripation || !price || !capacity || !location) {
+    //   res.status(400).json({ msg: "All fields are required" });
+    //   return;
+    // }
+
+    // Validate file upload
+    if (!req.file) {
+      res.status(400).json({ msg: "Image file is required" });
+      return;
+    }
+
+    // Upload image to Cloudinary
+    const result = (await cloudinaryUploadImage(req.file.path)) as {
+      secure_url: string;
+      public_id: string;
+    };
+
+    if (!result.secure_url || !result.public_id) {
+      throw new Error(
+        "Cloudinary upload failed: Missing secure_url or public_id"
+      );
+    }
+
+    // Create hall in the database
+    const hall = await prisma.hall.create({
+      data: {
+        name,
+        descripation, // Corrected typo
+        image: result.secure_url,
+        imagePublicId: result.public_id,
+        price: Number(price), // Ensure price is a number
+        capcity: Number(capacity), // Ensure capacity is a number
+        location,
+      },
+    });
+
+    // Send success response
+    res.status(201).json({
+      msg: "The hall is created successfully",
+      hall,
+    });
+  } catch (error) {
+    console.error("Error creating hall:", error);
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    res.status(500).json({ msg: "Something went wrong", error: errorMessage });
+  }
 };
 
 export const getHallById = async (
