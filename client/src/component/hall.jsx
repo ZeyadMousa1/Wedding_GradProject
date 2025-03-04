@@ -27,12 +27,27 @@ const HallDetails = () => {
   }
 
   return (
-    <div>
-      <h1>{hall.name}</h1>
-      <img src={hall.image} alt={hall.name} style={{ width: "300px" }} />
-      <p>{hall.description}</p>
-      <p>Price: ${hall.price}</p>
-      <p>Capacity: {hall.capacity} people</p>
+    <div className="container">
+      <div className="row ">
+        <div className="col-12 d-flex justify-content-center">
+          <h1 style={{ fontWeight: "600", fontSize: "34" }}>{hall.name}</h1>
+        </div>
+        <div className="col-12 d-flex justify-content-center m-auto">
+          <img src={hall.image} alt={hall.name} style={{ width: "80%" }} />
+        </div>
+        <div className="col-12 d-flex justify-content-center">
+          <p>{hall.description}</p>
+        </div>
+        <div className="col-12 d-flex justify-content-center">
+          <p>{hall.description}</p>
+        </div>
+        <div className="col-6 d-flex justify-content-center">
+          <p>Price: ${hall.price}</p>
+        </div>
+        <div className="col-6 d-flex justify-content-center">
+          <p>Capacity: {hall.capacity} people</p>
+        </div>
+      </div>
     </div>
   );
 };

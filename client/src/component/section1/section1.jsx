@@ -22,19 +22,17 @@ const Section1 = ({ name }) => {
 
   return (
     <div>
-      <h1>Halls</h1>
+      <h2>{name}</h2>
       {halls.map((hall) => (
-        <div key={hall.id} className="Row">
+        <div key={hall.id} className="d-flex mx-3 bg-lgiht text-black shadow rounded-2">
           {/* Wrap hall details in a Link */}
           <Link
             to={`/halls/${hall.id}`}
             style={{ textDecoration: "none", color: "inherit" }}
           >
-            <h2>{hall.name}</h2>
-            <img src={hall.image} alt={hall.name} style={{ width: "200px" }} />
-            <p>{hall.description}</p>
-            <p>Price: ${hall.price}</p>
-            <p>Capacity: {hall.capacity} people</p>
+            <img src={hall.image} alt={hall.name} style={{ width: "100%" }} />
+            <h2 className="text-center bg-light text-black" style={{ fontWeight: "600", fontSize: "20px",  }}>{hall.name}</h2>
+            <p className="text-center bg-light text-black" >Price: ${hall.price}</p>
           </Link>
         </div>
       ))}
