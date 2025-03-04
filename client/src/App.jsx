@@ -1,7 +1,6 @@
-import React from "react";
+import "./assets/css/style.css";
 import Navbar from "./component/Navbar/Navbar";
-import Search from "./component/search/Search";
-import Halls from "./component/halls/halls";
+import Halls from "./component/halls/Halls";
 import Footer from "./component/footer/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HallDetails from "./component/hall";
